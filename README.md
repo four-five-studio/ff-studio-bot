@@ -2,6 +2,8 @@
 
 FF Studio bot is an experiment with using LLM's to encourage and support us to do the things we wish we could rememeber. The conceptual idea is it acts as assistant for a specific use case.
 
+It creates a first draft of something so we can hurdle the inertia we find when trying to write and faced with a blank page.
+
 ## Things we dont know yet and want to learn
 - is the outcome is worth the carbon costs relating to CPU/GPU usage?
 - the outcome is worth accepting the political costs of how the LLM traning data sets were aquiried?
