@@ -7,3 +7,5 @@ gem 'dotenv'
 
 gem "langchainrb", "~> 0.17.1"
 gem 'ruby-openai'
+
+gem "rspec", "~> 3.13"
