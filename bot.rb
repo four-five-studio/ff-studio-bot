@@ -25,7 +25,6 @@ class Bot
   end
 
   def run
-    puts "This bot's invite URL is #{@bot.invite_url}"
     @bot.run
   end
 
