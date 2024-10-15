@@ -27,7 +27,10 @@ bot.message(start_with: 'bot: ') do |event|
   ]
   response = llm.chat(messages: messages)
   chat_completion = response.chat_completion
-  event.respond chat_completion
+
+  chat_completion.scan(/.{1,2000}\b/m).each do |chunk|
+    event.respond chunk
+  end
 end
 
 bot.run
