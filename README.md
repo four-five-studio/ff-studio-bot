@@ -24,6 +24,7 @@ We are using this work to learn, and feel our way forward.
 ## Principles that drive this work
 - We always ask ourselves 'what would Jane Jacobs' (https://en.wikipedia.org/wiki/Jane_Jacobs) do?
 - That vendor lock-in and monopoly power is the most important technical issue to avoid
+- Open standards are great
 
 ## Technical choices
 - TBD
