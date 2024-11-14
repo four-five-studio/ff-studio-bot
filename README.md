@@ -22,8 +22,9 @@ It creates a first draft of something so we can hurdle the inertia we find when 
 We are using this work to learn, and feel our way forward.
 
 ## Principles that drive this work
-- Examples we take inspiration from 
-  - TBD
+- We always ask ourselves 'what would Jane Jacobs' (https://en.wikipedia.org/wiki/Jane_Jacobs) do?
+- That vendor lock-in and monopoly power is the most important technical issue to avoid
 
 ## Technical choices
 - TBD
+- 
