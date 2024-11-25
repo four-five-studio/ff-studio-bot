@@ -18,6 +18,7 @@ It creates a first draft of something so we can hurdle the inertia we find when 
 - what user experiences make this playful, useful and enable meaningful consent
 - what languages and phrases do we need to explain it?
 - what technical choices balance climate costs, usability and privacy.
+- where does vendor lock-in express itself when using LLM tooling
 
 We are using this work to learn, and feel our way forward.
 
