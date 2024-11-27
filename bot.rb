@@ -2,6 +2,7 @@ require 'discordrb'
 require 'dotenv'
 require 'langchain'
 require 'openai'
+require 'http'
 Dotenv.load
 
 class Bot
@@ -22,6 +23,10 @@ class Bot
     @bot.message(start_with: 'bot: ') do |event|
       handle_chat(event)
     end
+
+    @bot.message(start_with: 'llama: ') do |event|
+      handle_llama(event)
+    end
   end
 
   def run
@@ -29,7 +34,6 @@ class Bot
   end
 
   private
-
 
   def handle_ping(event)
     p "received message: #{event.message.content}"
@@ -46,6 +50,26 @@ class Bot
 
     chat_completion.scan(/.{1,2000}\b/m).each do |chunk|
       event.respond chunk
+    end
+  end
+
+  def handle_llama(event)
+    response = HTTP.auth("Bearer #{ENV['REPLICATE_API_TOKEN']}")
+                   .headers(content_type: 'application/json', prefer: 'wait')
+                   .post("https://api.replicate.com/v1/models/meta/meta-llama-3-8b-instruct/predictions",
+                         json: { input: { prompt: event.message.content.gsub("llama: ", "") } })
+
+    if response.status.success?
+      result = response.parse
+      if result['output']
+        result['output'].join.scan(/.{1,2000}\b/m).each do |chunk|
+          event.respond chunk
+        end
+      else
+        event.respond "Error: No output in response"
+      end
+    else
+      event.respond "Error: #{response.status}"
     end
   end
 end
